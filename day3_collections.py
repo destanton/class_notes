@@ -1,5 +1,9 @@
 
+my_string = "peanut is awesome"
+my_string = my_string.split()  # convert large string into list of occurances. .split will make inv. words inside a list.
+print(my_string)
 my_list = ["danielle", 29, ["falling", "bees"]]
+
 #  lists always retain the order of input
 print(my_list)
 #  prints order and synntax

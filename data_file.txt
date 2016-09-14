@@ -1,0 +1,3 @@
+It's the third day of the iron yard.
+Going over lists, dicts, collections.
+I need more coffee.
