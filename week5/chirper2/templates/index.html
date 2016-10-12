@@ -6,9 +6,11 @@
 <h1> Welcome to Chirper!</h1>
 <form class="" action="" method="post">
   {% csrf_token %}
-  <textarea name="chirp_body" rows="2" cols="15" class="form-control"></textarea>
+  {{ form }}
   <input class="btn btn-default" type="submit" value="Submit">
 </form>
+
+
 <ul>
   {% for chirp in all_chirps %}
     <li>{{ chirp }} {{chirp.created}}</li>
