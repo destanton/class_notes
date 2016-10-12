@@ -17,6 +17,11 @@
       <a href="{% url 'index_view' %}">Home</a>
       <a href="{% url 'about_view' %}">About Me</a>
       <a href="http://google.com">Google</a>
+      {% if not request.user.is_authenticated %}
+        <a href="{% url 'login' %}">Login</a>
+      {% else %}
+        <a href="{% url 'logout' %}?next={% url 'index_view' %}">Logout</a>
+      {% endif %}
       {% block content %}
       {% endblock %}
       {% block footer %}

@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1> Welcome to Chirper!</h1>
+<h3>Hello, {{ request.user }}</h3>
 <form class="" action="" method="post">
   {% csrf_token %}
   {{ form }}
