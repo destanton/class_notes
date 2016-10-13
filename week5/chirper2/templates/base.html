@@ -8,7 +8,7 @@
     <style media="screen">
       body {
         background-color: lightgrey;
-        
+
       }
 
     </style>
@@ -17,7 +17,7 @@
     <div class="container">
       <a href="{% url 'index_view' %}">Home</a>
       <a href="{% url 'about_view' %}">About Me</a>
-      <a href="http://google.com">Google</a>
+      <a href="{% url 'chirp_create_view' %}">Chirp</a>
       {% if not request.user.is_authenticated %}
         <a href="{% url 'login' %}">Login</a>
       {% else %}

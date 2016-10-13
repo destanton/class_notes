@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
-from django.views.generic import TemplateView
-from django.views.generic import ListView
+from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView
 from app.models import Chirp
 from app.forms import ChirpForm
 
@@ -43,3 +43,19 @@ class ChirpView(ListView):  # class name is what's called in urls.py/inheriting 
     #     return render(request, "chirps.html")
     # def post(self, request):
     #     return render(request, "chirps.html")
+
+
+class ChirpDetailView(DetailView):
+    model = Chirp
+
+
+class ChirpCreateView(CreateView):
+    model = Chirp
+    success_url = "/chirps"
+    fields = ('body',)
+
+
+class ChirpUpdateView(UpdateView):
+    model = Chirp
+    success_url = "/chirps"
+    fields = ('body',)
