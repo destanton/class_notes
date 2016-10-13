@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import View
 from app.models import Chirp
 from app.forms import ChirpForm
 
@@ -23,3 +24,12 @@ def about_view(request):
     voice = request.POST.get("voice", "")
     print(request.POST)
     return render(request, "about.html")
+
+
+class ChirpView(View):  # class name is what's called in urls.py/inheriting View from django.views
+
+    def get(self, request):
+        return render(request, "chirps.html")
+
+    def post(self, request):
+        return render(request, "chirps.html")
