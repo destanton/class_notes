@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from app.models import Chirp
 from app.forms import ChirpForm
 
@@ -54,8 +56,20 @@ class ChirpCreateView(CreateView):
     success_url = "/chirps"
     fields = ('body',)
 
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        instance.user = self.request.user
+        return super().form_valid(form)
+
 
 class ChirpUpdateView(UpdateView):
     model = Chirp
     success_url = "/chirps"
     fields = ('body',)
+
+
+class UserCreateView(CreateView):
+    model = User
+    form_class = UserCreationForm
+    success_url = "/chirps"  # show reverse lazy
+    # fields = ('username', 'password')
