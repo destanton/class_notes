@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Welcome to JS Town</h1>
+    <p id="hipster_text">
+      Literally swag retro, vape YOLO synth typewriter craft beer photo booth lumbersexual pug. Cardigan letterpress hell of, distillery franzen master cleanse brunch everyday carry hot chicken humblebrag forage poke. Cray banh mi next level asymmetrical hashtag, crucifix four loko blog brooklyn tbh typewriter enamel pin post-ironic everyday carry. Green juice williamsburg offal synth plaid forage 90's. Vice viral neutra tumblr twee before they sold out hell of, fingerstache banjo butcher taxidermy roof party. Kinfolk tattooed tousled truffaut listicle subway tile. Hell of leggings ramps, 8-bit godard +1 fixie la croix tacos cardigan.
+    </p>
+    <p>
+      We are using JS and stuff
+    </p>
+    <p id="clickBye">
+
+    </p>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      /* console.log('hello world');
+      $("#hipster_text").on("click", function(e) {
+        $("#hipster_text").text("No more coffee here.");console.log("clicked!");
+      });
+      */
+      var wordArray = ["this", "is", "the", "remix"];
+      for (var i = 0; i < wordArray.length ; i++){
+          var newElement = $("<span id=" + i + ">")
+                          .text(wordArray[i] + " ")
+                          .on("click", function(e) {
+                            e.target.remove();
+                          });
+          $("#clickBye").append(newElement);
+
+      }
+    </script>
+  </body>
+</html>
