@@ -2,21 +2,9 @@
 
 {% block content %}
 <h1> Current Specials: </h1>
-
-{% for special in object_list %}
-<div class="">
-  <a href="{% url 'special_update_view' special.id %}">
-    <img src="{{ MEDIA_URL }}{{ special.image_url }}" alt="Picture of {{ special.title }}" />
-  </a>
+<input type="button" name="" value="Refresh" id="refresh-button">
+<div class="data-container">
 
 </div>
-<div class="">
-    {{ special.title }}
-</div>
-<div class="">
-  {{special.description}}
 
-</div>
-<hr>
-{% endfor %}
 {% endblock %}
